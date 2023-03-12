@@ -18,7 +18,8 @@ public class first {
         String[] city = new_str[2].split(" ");
         String[] age = new_str[3].split(" ");
 
-        StringBuilder result = new StringBuilder();
+        StringBuilder result = new StringBuilder( "select * from students where ");
+
 
         String word = "null";
 
@@ -26,13 +27,13 @@ public class first {
             result.append(name[0] + "='" + name[1] + "'");
         }
         if (!Arrays.asList(country).contains(word)){
-            result.append(", " + country[1] + "='" + country[2] + "'");
+            result.append("and " + country[1] + "='" + country[2] + "'");
         }
         if (!Arrays.asList(city).contains(word)){
-            result.append(", " + city[1] + "='" + city[2] + "'");
+            result.append("and " + city[1] + "='" + city[2] + "'");
         }
         if (!Arrays.asList(age).contains(word)){
-            result.append(", " + age[1] + "='" + age[2] + "'");
+            result.append("and " + age[1] + "='" + age[2] + "'");
         }
         
         System.out.println(result);
